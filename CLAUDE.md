@@ -6,7 +6,7 @@ This repository packages Databricks Apps skills for both Claude Code and Cursor.
 
 - `databricks-skills/<skill-name>/SKILL.md`: Source of truth for each skill.
 - `.claude-plugin/plugin.json`: Plugin manifest and skill directory references.
-- `.claude-plugin/marketplace.json`: Plugin metadata for discoverability.
+- `.claude-plugin/marketplace.json`: Marketplace manifest (must include `owner` and a `plugins` array per Claude Code's marketplace schema) so users can `/plugin marketplace add` this repo directly.
 - `.claude-plugin/setup.sh`: Session bootstrap message for Claude Code.
 - `hooks/hooks.json`: Runs setup on `SessionStart`.
 - `install.sh`: Installs skills for `claude`, `cursor`, or `all`.

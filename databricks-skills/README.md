@@ -18,10 +18,44 @@ Each skill teaches your AI assistant how to handle a specific aspect of Databric
 | `compute` | Connect to SQL warehouses and clusters |
 | `external_services` | External connections and third-party service integration |
 | `workflows` | Trigger and monitor Databricks Jobs |
+| `build-app` | Scaffold a Databricks App from the cookbook (Dash, Streamlit, Reflex, FastAPI) |
+| `productionize-app-dab` | Wrap a cookbook app in a Databricks Asset Bundle (DAB) |
 
 ## Installation
 
-### Option 0: One-command installer (recommended)
+### Option 0a: Claude Code plugin marketplace (recommended for Claude Code)
+
+The repo ships as a Claude Code plugin. Add it as a marketplace and install with two commands — no symlinks, no copies, and the bundled `SessionStart` hook runs automatically.
+
+**From GitHub:**
+
+```text
+/plugin marketplace add databricks-solutions/databricks-apps-cookbook
+/plugin install databricks-skills@databricks-skills
+/reload-plugins
+```
+
+**From a local clone (offline / for editing):**
+
+```bash
+git clone https://github.com/databricks-solutions/databricks-apps-cookbook.git
+```
+
+Then in Claude Code:
+
+```text
+/plugin marketplace add /absolute/path/to/databricks-apps-cookbook
+/plugin install databricks-skills@databricks-skills
+/reload-plugins
+```
+
+After install, all 12 skills appear under the `databricks-skills:` namespace (e.g. `databricks-skills:cookbook-authentication`). Manage with:
+
+- `/plugin list` — see installed plugins
+- `/plugin marketplace update databricks-skills` — pull latest
+- `/plugin uninstall databricks-skills@databricks-skills` — remove
+
+### Option 0b: One-command installer (recommended for Cursor, or for Claude Code without plugins)
 
 Use the included installer to install for Claude Code, Cursor, or both:
 
