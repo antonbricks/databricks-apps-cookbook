@@ -1,0 +1,11 @@
+{
+  "name": "databricks-skills",
+  "version": "1.0.0",
+  "description": "Databricks Apps cookbook skills plugin for Claude Code and Cursor.",
+  "tags": [
+    "databricks",
+    "apps",
+    "ai-coding-assistant",
+    "skills"
+  ]
+}

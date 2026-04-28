@@ -10,7 +10,9 @@ Each skill teaches your AI assistant how to handle a specific aspect of Databric
 |-------|-------------|
 | `authentication` | OAuth (user + app auth), token management, retrieving current user |
 | `tables` | Read/write Delta tables, Lakebase connectivity, table editing |
+| `unity_catalog` | Browse catalogs and schemas in Unity Catalog |
 | `volumes` | Upload/download files from Unity Catalog Volumes |
+| `visualizations` | Build chart and map visualizations from table data |
 | `aiml` | Invoke ML models, vector search, MCP connections |
 | `bi` | Embed AI/BI dashboards, Genie API integration |
 | `compute` | Connect to SQL warehouses and clusters |
@@ -18,6 +20,17 @@ Each skill teaches your AI assistant how to handle a specific aspect of Databric
 | `workflows` | Trigger and monitor Databricks Jobs |
 
 ## Installation
+
+### Option 0: One-command installer (recommended)
+
+Use the included installer to install for Claude Code, Cursor, or both:
+
+```bash
+# From repository root
+./install.sh claude   # Install skills under ~/.claude/skills/
+./install.sh cursor   # Install transformed rules under ~/.cursor/rules/
+./install.sh all      # Install for both tools
+```
 
 ### Option A: Symlink (recommended)
 
@@ -64,7 +77,11 @@ done
 Copy skills into your tool's skill directory. You'll need to re-copy after updates.
 
 ```bash
+# Cursor
 cp -r databricks-apps-cookbook/databricks-skills/authentication ~/.cursor/skills/cookbook-authentication
+
+# Claude Code
+cp -r databricks-apps-cookbook/databricks-skills/authentication ~/.claude/skills/cookbook-authentication
 ```
 
 ### Option C: Project-level skills
